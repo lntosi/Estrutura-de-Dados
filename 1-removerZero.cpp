@@ -1,5 +1,8 @@
-//Bom leiaute - Remove zeros
-//página 5
+// Bom leiaute - Remove zeros
+// página 5
+
+// A função recebe o inteiro n >= 1 e um vetor v.
+// Retorna o número n de elementos do vetor após a remoção dos zeros.
 
 #include<stdio.h>
 
@@ -13,12 +16,8 @@ int removerZero (int n, int v[])
 			i = i + 1;
 		else
 		{
-			j = i + 1;
-			while(j < n)
-			{
+			for (j = i + 1; j < n; j++)
 				v[j - 1] = v[j];
-				j++;
-			}
 			n = n - 1;
 		}
 	}
@@ -27,15 +26,12 @@ int removerZero (int n, int v[])
 
 int main()
 {
-	int v[5] = {0, 2, 0, 3, 4};
+	int v[5] = {0, 5, 0, 1, 3};
 	int n = 5;
 	int i = 0;
 	n = removerZero (n, v);
-	while(i < n)
-	{
+	for (i = 0; i < n; i++)
 		printf ("%d\t", v[i]);
-		i++;
-	}
 	printf ("\n%d", n);
 	return 0;
 }
