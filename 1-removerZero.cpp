@@ -4,7 +4,7 @@
 // A função recebe o inteiro n >= 1 e um vetor v.
 // Retorna o número n de elementos do vetor após a remoção dos zeros.
 
-#include<stdio.h>
+#include <stdio.h>
 
 int removerZero (int n, int v[])
 {
@@ -13,12 +13,12 @@ int removerZero (int n, int v[])
 	while (i < n)
 	{
 		if (v[i] != 0)
-			i = i + 1;
+			i++;
 		else
 		{
 			for (j = i + 1; j < n; j++)
 				v[j - 1] = v[j];
-			n = n - 1;
+			n--;
 		}
 	}
 	return n;
@@ -27,8 +27,7 @@ int removerZero (int n, int v[])
 int main()
 {
 	int v[5] = {0, 5, 0, 1, 3};
-	int n = 5;
-	int i = 0;
+	int n = 5, i;
 	n = removerZero (n, v);
 	for (i = 0; i < n; i++)
 		printf ("%d\t", v[i]);
