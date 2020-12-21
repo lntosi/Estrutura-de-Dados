@@ -5,11 +5,10 @@
 
 #include <stdio.h>
 
-int soma (int v[], int n)
+int somarElementos (int v[], int n)
 {
 	int i, x = 0;
-	for (i = 0; i < n; i++)
-		x += v[i];
+	for (i = 0; i < n; i++) x += v[i];
 	return x;
 }
 
@@ -17,7 +16,7 @@ int main()
 {
 	int v[5] = {0, 5, 0, 1, 3};
 	int n = 5, x = 0;
-	x = soma(v, n);
+	x = somarElementos(v, n);
 	printf ("%d", x);
 	return 0;
 }

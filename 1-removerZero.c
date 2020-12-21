@@ -6,18 +6,22 @@
 
 #include <stdio.h>
 
-int removerZero (int n, int v[])
+int removeZero (int v[], int n)
 {
 	int i, j;
 	i = 0;
-	while (i < n)
+	while(i < n)
 	{
-		if (v[i] != 0)
+		if(v[i] != 0)
+		{
 			i++;
+		}
 		else
 		{
-			for (j = i + 1; j < n; j++)
+			for(j = i + 1; j < n; j++)
+			{
 				v[j - 1] = v[j];
+			}
 			n--;
 		}
 	}
@@ -26,11 +30,12 @@ int removerZero (int n, int v[])
 
 int main()
 {
-	int v[5] = {0, 5, 0, 1, 3};
-	int n = 5, i;
-	n = removerZero (n, v);
+	int n = 5;
+	int v[5] = {3, 0, 8, 0, 9};
+	int i;
+	n = removeZero(v, n);
+	printf("O vetor possui %d elementos.\n", n);
 	for (i = 0; i < n; i++)
-		printf ("%d\t", v[i]);
-	printf ("\n%d", n);
+		printf("%d\t", v[i]);
 	return 0;
 }

@@ -5,19 +5,18 @@
 
 #include <stdio.h>
 
-int onde(int x, int v[], int n)
+int buscarIndice (int n, int v[], int x)
 {
-	int j = 0;
-	while (j < n && v[j] != x)
-		j += 1;
-	return j;
+	int i = 0;
+	while (v[i] != x && i < n) i++;
+	return i;
 }
 
 int main()
 {
 	int v[5] = {0, 5, 0, 1, 3};
-	int n = 5, x = 3;
-	int j = onde(x, v, n);
-	printf ("%d", j);
+	int n = 5, x = 1;
+	int i = buscarIndice(n, v, x);
+	printf ("%d", i);
 	return 0;
 }

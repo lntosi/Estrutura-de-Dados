@@ -6,11 +6,11 @@
 
 #include <stdio.h>
 
-int Max (int v[], int n)
+int mostrarMax (int n, int v[])
 {
-	int j, x = v[0];
-	for (j = 1; j < n; j++)
-		if (x < v[j]) x = v[j];
+	int i, x = v[0];
+	for (i = 1; i < n; i++)
+		if (x < v[i]) x = v[i];
 	return x;
 }
 
@@ -18,7 +18,7 @@ int main()
 {
 	int v[5] = {0, 5, 0, 1, 3};
 	int n = 5, x = 0;
-	x = Max(v, n);
+	x = mostrarMax(n,v);
 	printf ("%d", x);
 	return 0;
 }
